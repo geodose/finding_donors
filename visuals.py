@@ -23,7 +23,7 @@ def distribution(data, transformed = False):
     """
     
     # Create figure
-    fig = pl.figure(figsize = (11,5));
+    fig = pl.figure(figsize = (22,10));
 
     # Skewed feature plotting
     for i, feature in enumerate(['capital-gain','capital-loss']):
@@ -60,7 +60,7 @@ def evaluate(results, accuracy, f1):
     """
   
     # Create figure
-    fig, ax = pl.subplots(2, 3, figsize = (11,7))
+    fig, ax = pl.subplots(2, 3, figsize = (22,14))
 
     # Constants
     bar_width = 0.3
@@ -114,7 +114,7 @@ def evaluate(results, accuracy, f1):
                loc = 'upper center', borderaxespad = 0., ncol = 3, fontsize = 'x-large')
     
     # Aesthetics
-    pl.suptitle("Performance Metrics for Three Supervised Learning Models", fontsize = 16, y = 1.10)
+    pl.suptitle("Performance Metrics for Three Supervised Learning Models", fontsize = 12, y = 1.10)
     pl.tight_layout()
     pl.show()
     
@@ -127,7 +127,7 @@ def feature_plot(importances, X_train, y_train):
     values = importances[indices][:5]
 
     # Creat the plot
-    fig = pl.figure(figsize = (9,5))
+    fig = pl.figure(figsize = (18,10))
     pl.title("Normalized Weights for First Five Most Predictive Features", fontsize = 16)
     pl.bar(np.arange(5), values, width = 0.6, align="center", color = '#00A000', \
           label = "Feature Weight")
